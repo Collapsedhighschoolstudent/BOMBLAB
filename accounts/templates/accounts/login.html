@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>登入</h1>
+        <ul><li><a href="{% url 'index' %}">返回</a></li></ul>
+    </header>
+
+    <section class="intro">
+        <form method="POST" action="">
+            {% csrf_token %}
+
+            <label for="username"> 帳號</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password"> 密碼</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">登入</button>
+
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        </form>
+    </section>
+</body>
+</html>

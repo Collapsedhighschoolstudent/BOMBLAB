@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOMB LAB 亂搞實驗室</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1>BOMB LAB</h1>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                <li class="welcome">Hi, {{ user.username }}</li>
+                <li><a href="{% url 'accounts:logout' %}">登出</a></li>
+                {% else %}
+                <li><a href="{% url 'accounts:login' %}">登入</a></li>
+                <li><a href="{% url 'accounts:register' %}">註冊</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="intro">
+            <h2>亂搞實驗室</h2>
+            <p>愛亂搞之中女生</p>
+            <p><em><a href="#">創建</a></em></p>
+            <p><em><a href="#">開啟</a></em></p>
+        </section>
+
+        <section class="button">
+            <blockquote>" Let your creativity BOOM "</blockquote>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright 2025 BOMB LAB ALL RIGHTS RESERVED.</p>
+    </footer>
+</body>
+
+</html>
