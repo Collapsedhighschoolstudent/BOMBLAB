@@ -1,11 +1,10 @@
-/* Reset */
-* {
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Header / 導覽列 */
 header {
     background-color: rgba(78, 87, 110, 0.95);
     height: 80px;
@@ -14,9 +13,9 @@ header {
     top: 0;
     left: 0;
     display: flex;                     
-    justify-content: space-between;    /* 左右分開 */
-    align-items: center;               /* 垂直置中 */
-    padding: 0 20px;                   /* 左右內距 */
+    justify-content: space-between;   
+    align-items: center;             
+    padding: 0 20px;                  
     z-index: 2;
     background-image: url('picture/圖標\ \(2\).png');
     background-repeat: no-repeat;
@@ -25,7 +24,7 @@ header {
     animation: fadeInForm 1s forwards;
 }
 
-/* 標題 */
+
 header h1 {
     color: rgb(255, 255, 255);
     font-size: 24px;
@@ -33,7 +32,7 @@ header h1 {
 header ul li {
     position: relative; 
     display: inline-block;
-    padding: 0 15px; /* 給文字一點左右間距 */
+    padding: 0 15px; 
 }
 
 header ul ul{
@@ -56,23 +55,23 @@ header ul li:hover > ul {
    
 }
 
-/* 導覽列 ul */
+
 header ul {
     display: flex;
     align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 20px;               /* 元素間距 */
-    flex-wrap: nowrap;       /* 不換行 */
+    gap: 20px;              
+    flex-wrap: nowrap;      
 }
 
-/* li 元素 */
+
 header li {
     white-space: nowrap;    
 }
 
-/* 導覽列連結 */
+
 header a {
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -83,13 +82,13 @@ header a:hover {
     text-decoration: underline;
 }
 
-/* 歡迎文字 */
+
 header .welcome {
     font-size: 16px;
     color: rgb(72, 72, 72);
 }
 
-/* Intro 區塊 */
+
 .intro {
     background-color: rgb(0, 0, 0);
     color: white;
@@ -103,7 +102,7 @@ header .welcome {
     align-items: center;
     justify-content: center;
     z-index: -1;
-    padding-top: 80px; /* 避免被 header 遮住 */
+    padding-top: 80px; 
 }
 
 .intro h2 {
@@ -125,7 +124,7 @@ header .welcome {
     border-radius: 5px;
 }
 
-/* Button 區塊 */
+
 .button {
     background-color: rgb(193, 230, 209);
     color: rgb(17, 16, 16);
@@ -137,7 +136,7 @@ header .welcome {
     line-height: 1.8em;
     z-index: 1;
     font-size: large;
-    position: relative; /* 基準點 */
+    position: relative;
     min-height: 500px; 
 }
 .big-paramecium {
@@ -152,7 +151,7 @@ header .welcome {
     line-height: 1.8em;
     z-index: 1;
     font-size: large;
-    position: relative; /* 基準點 */
+    position: relative; 
     min-height: 500px; 
     background-image: url('picture/big.jpg');
     background-repeat: no-repeat;
@@ -179,7 +178,7 @@ header .welcome {
     line-height: 1.8em;
     z-index: 1;
     font-size: large;
-    position: relative; /* 基準點 */
+    position: relative; 
     min-height: 500px; 
     background-image: url('picture/QQ.jpg');
     background-repeat: no-repeat;
@@ -206,7 +205,7 @@ header .welcome {
     line-height: 1.8em;
     z-index: 1;
     font-size: large;
-    position: relative; /* 基準點 */
+    position: relative; 
     min-height: 500px; 
     background-image: url('picture/double.jpg');
     background-repeat: no-repeat;
@@ -241,11 +240,11 @@ header .welcome {
     font-size: 14px;
 }
 #three-container {
-    width: 300px;  /* 你可以調整寬度 */
-    height: 300px; /* 你可以調整高度 */
+    width: 300px;  
+    height: 300px; 
     margin: 20px auto;
-    background-color: rgba(255, 255, 255, 0.3); /* 淡淡的背景色讓它有框框感 */
-    border-radius: 50%; /* 圓形的看起來比較像顯微鏡視窗 */
+    background-color: rgba(255, 255, 255, 0.3); 
+    border-radius: 50%; 
     overflow: hidden;
     z-index: -1;
 }
@@ -317,7 +316,7 @@ header .welcome {
     background: #cefce9;
     padding: 25px;
     border-radius: 12px;
-    border-bottom: 4px solid #00ff88; /* 呼應 3D 草履蟲的顏色 */
+    border-bottom: 4px solid #00ff88; 
     transition: all 0.3s ease;
 }
 
