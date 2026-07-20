@@ -49,27 +49,27 @@
             <script type="module">
                 import * as THREE from 'three';
 
-                // 確保網頁元素都讀取完畢後再執行
+                // 確保讀取完畢後執行
                 window.addEventListener('load', () => {
                     const container = document.getElementById('three-container');
 
-                    // 如果找不到容器就停止執行，避免報錯
+                    // 停止執行，避免報錯
                     if (!container) return;
 
                     const getWidth = () => container.clientWidth;
                     const getHeight = () => container.clientHeight;
 
-                    // 1. 場景設定
+                    //  場景設定
                     const scene = new THREE.Scene();
                     const camera = new THREE.PerspectiveCamera(75, getWidth() / getHeight(), 0.1, 1000);
                     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
                     renderer.setSize(getWidth(), getHeight());
-                    // 解決部分螢幕模糊問題
+                    // 解決模糊
                     renderer.setPixelRatio(window.devicePixelRatio);
                     container.appendChild(renderer.domElement);
 
-                    // 2. 建立「草履蟲」 (調整為更扁長一點的比例)
+                    // 建立模型
                     const geometry = new THREE.CapsuleGeometry(0.4, 1.2, 12, 32);
                     const material = new THREE.MeshPhongMaterial({
                         color: 0x00ff88,
@@ -80,7 +80,7 @@
                     const paramecium = new THREE.Mesh(geometry, material);
                     scene.add(paramecium);
 
-                    // 3. 燈光與相機
+                    // 燈光與相機
                     const light = new THREE.DirectionalLight(0xffffff, 1.5);
                     light.position.set(2, 2, 5);
                     scene.add(light);
@@ -88,7 +88,7 @@
 
                     camera.position.z = 3.5;
 
-                    // 4. 動畫迴圈 (加入輕微的上下漂浮感)
+                    // 4. 動畫
                     function animate() {
                         requestAnimationFrame(animate);
 
@@ -96,13 +96,13 @@
                         paramecium.rotation.x += 0.005;
                         paramecium.rotation.y += 0.01;
 
-                        // 模擬水中的上下漂浮
+                        // 上下
                         paramecium.position.y = Math.sin(Date.now() * 0.002) * 0.15;
 
                         renderer.render(scene, camera);
                     }
 
-                    // 5. 視窗縮放處理
+                    // 視窗縮放
                     window.addEventListener('resize', () => {
                         const w = getWidth();
                         const h = getHeight();
